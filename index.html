@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link type="text/css" rel="stylesheet" href="./style/style.css">
-  
-  <title>Whack Emoji</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link type="image/png" rel="icon" href="./img/emoji.png" />
+    <link type="text/css" rel="stylesheet" href="./style/style.css">
 
-<body>
-  <div class="main">
-    <p id="result">Your Score: 0</p>
+    <title>Whack Emoji</title>
+  </head>
 
-    <ul class="list">
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-      <li class="item"></li>
-    </ul>
-  </div>
+  <body>
+    <div class="content">
+      <div class="game">
+        <p class="result">Your Score: 0</p>
 
-  <div class="info">
-    <img class="infoImage" src="./img/info.png" alt="Info">
-    <div class="infoText">
-      <a href="https://wallpapersafari.com/razer-4k-wallpapers/" target="_blank" class="link">
-        Wallpaper
-      </a>
-      <a href="https://pngriver.com/download-angry-emoji-png-transparent-028-31739/"
-      target="_blank" class="link">
-        Emoji
-      </a>
+        <ul class="list">
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+        </ul>
+      </div>
+      
+      <button class="btn success start" onclick="start()">Start</button>
+
     </div>
-  </div>
+
+    <div class="info">
+      <img class="infoImage" src="./img/info.png" alt="Info">
+      <div class="infoText">
+        <a href="https://wallpapersafari.com/razer-4k-wallpapers/" target="_blank" class="link">
+          Wallpaper
+        </a>
+        <a href="https://pngriver.com/download-angry-emoji-png-transparent-028-31739/"
+        target="_blank" class="link">
+          Emoji
+        </a>
+      </div>
+    </div>
 
 
-  <!-- Links -->
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script type="text/javascript" src="./js/main.js"></script>
+    <!-- Links -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 
-</body>
+  </body>
 </html>

@@ -1,14 +1,37 @@
 body {
-  font-family: Courier New;
   background: url("../img/wallpaper.jpg") no-repeat center center fixed;
   background-size: cover;
+  font-family: Courier New;
 }
 
-.main {
+.btn {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+  font-size: 2rem;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.success {
+  color: green;
+}
+
+.success:hover {
+  background-color: green;
+  color: white;
+}
+
+.content {
   position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -55%) ;
+  transform: translate(-50%, -55%);
+}
+
+.game {
   background-color: black;
   border-radius: 10%;
 }
@@ -17,6 +40,7 @@ body {
   list-style-type: none;
   height: 15rem;
   width: 15rem;
+  margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -60,7 +84,7 @@ body {
   color: white;
 }
 
-#result {
+.result {
   font-size: 1.75rem;
   text-align: center;
   color: white;
