@@ -2,7 +2,7 @@ var score = 0;
 var randomNumber;
 var gameOver = false;
 
-var interval = setInterval(faceJump, 2000);
+var interval = setInterval(faceJump, 1000);
 
 $("li").click(faceClick);
 
