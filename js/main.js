@@ -16,7 +16,7 @@ function faceJump() {
 function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
     score++;
-    $('#score').html('Your Score: ' + score);
+    $('#result').html('Your Score: ' + score);
   }
   else {  
     clearInterval(interval);
@@ -28,3 +28,7 @@ function faceClick() {
     $("li").click(false);
   }
 }
+
+// Info
+console.log('Wallpaper: https://wallpapersafari.com/razer-4k-wallpapers/');
+console.log('Emoji: https://pngriver.com/download-angry-emoji-png-transparent-028-31739/');
