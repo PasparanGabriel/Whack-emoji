@@ -6,9 +6,11 @@ body {
 
 .main {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -60%) ;
+  transform: translate(-50%, -55%) ;
+  background-color: black;
+  border-radius: 10%;
 }
 
 .list {
@@ -20,11 +22,10 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-li {
+.item {
   margin: 0.5rem;
-  border: 1px solid black;
   border-radius: 100%;
-  background: #01D204;
+  background: darkslategray;
 }
 
 .emoji {
@@ -32,8 +33,35 @@ li {
   background-image: url("../img/emoji.png");
 }
 
+.info {
+  position: relative;
+  float: right;
+}
+
+.infoImage {
+  width: 1.75rem;
+}
+
+.infoText {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.info:hover .infoText {
+  opacity: 1;
+  background-color: black;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
 #result {
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: center;
   color: white;
 }

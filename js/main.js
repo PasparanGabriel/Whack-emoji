@@ -24,11 +24,7 @@ function faceClick() {
   }
 
   if (gameOver) {
-    $('#result').html("Game Over");   
-    $("li").click(false);
+    $('#result').html('Game Over<br>' + 'Your Score: ' + score);   
+    $('li').click(false);
   }
 }
-
-// Info
-console.log('Wallpaper: https://wallpapersafari.com/razer-4k-wallpapers/');
-console.log('Emoji: https://pngriver.com/download-angry-emoji-png-transparent-028-31739/');
