@@ -52,6 +52,8 @@ body {
   background: black;
 
   border-top: 12px solid #020093;
+
+  cursor: url(../img/cursor.cur), auto;
 }
 
 .emoji {
