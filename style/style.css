@@ -49,7 +49,9 @@ body {
 .item {
   margin: 0.5rem;
   border-radius: 100%;
-  background: darkslategray;
+  background: black;
+
+  border-top: 12px solid #020093;
 }
 
 .emoji {
@@ -82,6 +84,17 @@ body {
 .link {
   text-decoration: none;
   color: white;
+}
+
+.table {
+  position: relative;
+  transform: rotateX(55deg);
+  background: linear-gradient(
+    180deg,
+    rgba(50,60,255,1) 0%,
+    rgba(100,100,255,1) 30%,
+    rgba(195,230,255,1) 100%
+  );
 }
 
 .result {
