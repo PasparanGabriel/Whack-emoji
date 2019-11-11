@@ -1,49 +1,73 @@
+@font-face {
+  font-family: "DS DIGI";
+  src: url(../fonts/DS-DIGI.ttf);
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url(../fonts/PressStart2P.ttf);
+}
+
 body {
   background: url("../img/wallpaper.jpg") no-repeat center center fixed;
   background-size: cover;
-  font-family: Courier New;
 }
 
 .btn {
+  display: block;
+  margin: auto;
+
   border: 0;
-  background-color: white;
+  border-radius: 0.5rem;
+  background-color: lime;
+  box-shadow: 0.2rem 0.2rem grey;
+  color: gray;
+  text-shadow: -1px -1px black, 1px 1px white;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
   font-size: 2rem;
-
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
+  padding: 0.75rem 1.25rem;
 }
 
-.success {
-  color: green;
+.btn:active {
+  box-shadow: none;
 }
 
-.success:hover {
-  background-color: green;
-  color: white;
+.btn:disabled {
+  background-color: red;
 }
 
 .content {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -50%);
 }
 
 .game {
   background-color: black;
   border-radius: 10%;
+  padding: 1rem;
 }
 
 .list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   list-style-type: none;
   height: 15rem;
   width: 15rem;
-  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  position: relative;
+  transform: rotateX(40deg);
+  background: linear-gradient(
+    180deg,
+    rgba(50,60,255,1) 0%,
+    rgba(100,100,255,1) 30%,
+    rgba(195,230,255,1) 100%
+  );
 }
 
 .item {
@@ -88,19 +112,15 @@ body {
   color: white;
 }
 
-.table {
-  position: relative;
-  transform: rotateX(55deg);
-  background: linear-gradient(
-    180deg,
-    rgba(50,60,255,1) 0%,
-    rgba(100,100,255,1) 30%,
-    rgba(195,230,255,1) 100%
-  );
+.link:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 .result {
-  font-size: 1.75rem;
+  color: lightgray;
+  font-family: 'DS DIGI';
+  font-size: 2rem;
   text-align: center;
-  color: white;
+  margin: 0;
 }

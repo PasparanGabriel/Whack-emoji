@@ -9,7 +9,7 @@ function start() {
   score = 0
 
   $('.result').html('Your Score: 0')
-  $('.start').attr('hidden', true)
+  $('.start').attr('disabled', 'disabled')
   $('.item').click(faceClick)
 }
 
@@ -32,7 +32,7 @@ function faceClick() {
   if (gameOver) {
     $('.result').html('Game Over<br>' + 'Your Score: ' + score)
     $('.item').click(false)
-    $('.start').removeAttr('hidden')
+    $('.start').removeAttr('disabled')
 
     clearInterval(interval)
   }
