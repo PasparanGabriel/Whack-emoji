@@ -13,6 +13,7 @@ function start() {
   score = 0
 
   $('.result').html('Your Score: 0')
+  $('.gameOver').css('visibility', 'hidden')
   $('.start').attr('disabled', 'disabled')
   $('.item').click(faceClick)
 }
@@ -36,7 +37,7 @@ function faceClick() {
   }
 
   if (gameOver) {
-    $('.result').html('Game Over<br>' + 'Your Score: ' + score)
+    $('.gameOver').css('visibility', 'visible')
     $('.item').click(false)
     $('.start').removeAttr('disabled')
 
