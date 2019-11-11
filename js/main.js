@@ -1,9 +1,13 @@
+var audioWin
+var audioGameOver
 var gameOver
 var interval
 var randomNumber
 var score
 
 function start() {
+  audioWin = new Audio('audio/win.mp3')
+  audioGameOver = new Audio('audio/gameOver.mp3')
   interval = setInterval(faceJump, 1000)
   gameOver = false
   score = 0
@@ -24,9 +28,11 @@ function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
     score++
     $('.result').html('Your Score: ' + score)
+    audioWin.play()
   }
   else {
     gameOver = true
+    audioGameOver.play()
   }
 
   if (gameOver) {
