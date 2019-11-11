@@ -8,7 +8,7 @@ var score
 function start() {
   audioWin = new Audio('audio/win.mp3')
   audioGameOver = new Audio('audio/gameOver.mp3')
-  interval = setInterval(faceJump, 1000)
+  interval = setInterval(faceJump, 1200)
   gameOver = false
   score = 0
 
