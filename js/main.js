@@ -29,6 +29,7 @@ function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
     score++
     $('.result').html('Your Score: ' + score)
+    $('.item').removeClass('emoji')
     audioWin.play()
   }
   else {
