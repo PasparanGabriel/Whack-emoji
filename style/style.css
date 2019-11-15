@@ -98,6 +98,7 @@ body {
 }
 
 .gameOver {
+  display: block;
   color: lightgray;
   font-family: 'DS DIGI';
   font-size: 2rem;
