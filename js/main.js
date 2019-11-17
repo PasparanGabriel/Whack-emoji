@@ -34,10 +34,10 @@ function faceJump() {
 
 function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
+    audioWin.play()
     score++
     $('.score').html(score)
     $('.item').removeClass('emoji').removeAttr('style')
-    audioWin.play()
   }
   else {
     gameOver = true
