@@ -9,8 +9,7 @@
 }
 
 body {
-  background: url("../img/wallpaper.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: url("../img/wallpaper.jpg") center center fixed no-repeat / cover;
 }
 
 .btn {
@@ -20,10 +19,10 @@ body {
 
   border: 0;
   border-radius: 0.5rem;
-  background-color: lime;
-  box-shadow: 0 0.5rem grey;
-  color: gray;
-  text-shadow: -1px -1px black, 1px 1px white;
+  background-color: #00FF00;
+  box-shadow: 0 0.5rem #808080;
+  color: #808080;
+  text-shadow: -1px -1px #000000, 1px 1px #FFFFFF;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive;
   font-weight: bold;
@@ -38,7 +37,7 @@ body {
 }
 
 .btn:disabled {
-  background-color: red;
+  background-color: #FF0000;
   box-shadow: none;
   top: 0.5rem;
 }
@@ -51,9 +50,25 @@ body {
 }
 
 .game {
-  background-color: black;
-  border-radius: 10%;
+  background-color: #000000;
+  border-radius: 1.5rem;
   padding: 1rem;
+}
+
+.gameOver {
+  display: none;
+  color: #FFFFFF;
+  font-family: 'DS DIGI';
+  font-size: 2rem;
+  text-align: center;
+}
+
+.item {
+  border-radius: 2rem;
+  background-color: #000000;
+  border-top: 0.5rem solid #020093;
+  cursor: url(../img/cursor.cur), auto;
+  margin: 0.5rem;
 }
 
 .list {
@@ -65,7 +80,7 @@ body {
   padding: 0;
 
   position: relative;
-  transform: rotateX(40deg);
+  transform: rotateX(45deg);
   background: linear-gradient(
     180deg,
     rgba(50,60,255,1) 0%,
@@ -74,35 +89,20 @@ body {
   );
 }
 
-.item {
-  margin: 0.5rem;
-  border-radius: 100%;
-  background: black;
-
-  border-top: 12px solid #020093;
-
-  cursor: url(../img/cursor.cur), auto;
-}
-
 .emoji {
+  background: url("../img/emoji.png");
   background-size: cover;
-  background-image: url("../img/emoji.png");
 }
 
-.result {
-  color: lightgray;
+.score, .timerOn {
+  color: #FFFFFF;
   font-family: 'DS DIGI';
   font-size: 2rem;
-  text-align: center;
-  margin: 0;
+  float: right;
 }
 
-.gameOver {
-  display: block;
-  color: lightgray;
+.result, .timer {
+  color: #FFFFFF;
   font-family: 'DS DIGI';
   font-size: 2rem;
-  text-align: center;
-  margin: 0;
-  visibility: hidden;
 }

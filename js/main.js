@@ -1,44 +1,42 @@
-var audioWin
-var audioGameOver
-var gameOver
-var interval
-var randomNumber
-var score
-var timer
+let audioWin, audioGameOver, gameOver, score, timer, timerEmoji
 
-function start() {
+window.onload = function() {
   audioWin = new Audio('audio/win.mp3')
   audioGameOver = new Audio('audio/gameOver.mp3')
-  interval = setInterval(faceJump, 1200)
+}
+
+function start() {
   gameOver = false
   minutes = 2
   seconds = 0
   score = 0
+
+  timerEmoji = setInterval(faceJump, 1200)
   timer = setInterval(timerOn, 1000)
 
-  $('.gameOver').css('visibility', 'visible')
-  $('.gameOver').html(
+  $('.gameOver').css('display', 'none')
+  $('.item').unbind('click').click(faceClick)
+  $('.score').html(score)
+  $('.start').attr('disabled', 'disabled')
+  $('.timerGame').css('display', 'block')
+  $('.timerOn').css('color', '#FFFFFF')
+  $('.timerOn').html(
     (minutes < 10 ? '0' + minutes : minutes)
     + ':' +
     (seconds < 10 ? '0' + seconds : seconds)
   )
-  $('.item').click(faceClick)
-  $('.result').html('Your Score: 0')
-  $('.start').attr('disabled', 'disabled')
 }
 
 function faceJump() {
-  $('.item').removeClass('emoji')
-  
-  randomNumber = Math.floor(Math.random() * 9)
-  $('.item').eq(randomNumber).addClass('emoji')
+  $('.item').removeClass('emoji').removeAttr('style')
+  $('.item').eq(randomNumber(9)).addClass('emoji').css('border', '0')
 }
 
 function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
     score++
-    $('.result').html('Your Score: ' + score)
-    $('.item').removeClass('emoji')
+    $('.score').html(score)
+    $('.item').removeClass('emoji').removeAttr('style')
     audioWin.play()
   }
   else {
@@ -46,17 +44,21 @@ function faceClick() {
   }
 }
 
+function randomNumber(number) {
+  return Math.floor(Math.random() * number)
+}
+
 function timerOn() {
   if (gameOver) {
     audioGameOver.play()
 
-    clearInterval(interval)
+    clearInterval(timerEmoji)
     clearInterval(timer)
 
-    $('.gameOver').css('color', 'white')
-    $('.gameOver').html('Game Over')
+    $('.gameOver').css('display', 'block')
     $('.item').click(false)
     $('.start').removeAttr('disabled')
+    $('.timerGame').css('display', 'none')
   } else {
     if (seconds === 0) {
       if (minutes === 0) {
@@ -69,25 +71,14 @@ function timerOn() {
       seconds--
 
       if (minutes === 0 && seconds < 4) {
-        $('.gameOver').css('color', 'red')
+        $('.timerOn').css('color', '#FF0000')
       }
     }
   
-    $('.gameOver').html(
+    $('.timerOn').html(
       (minutes < 10 ? '0' + minutes : minutes)
       + ':' +
       (seconds < 10 ? '0' + seconds : seconds)
     )
   }
 }
-
-$(document).ready(function() {
-  $('.item').click(function() {
-    var intervalCursor = setInterval(() => {
-      $(this).css('cursor', 'url(img/cursor.cur), auto')
-      clearInterval(intervalCursor)
-    }, 1000)
-
-    $(this).css('cursor', 'url(img/cursorClick.cur), auto')
-  })
-})
