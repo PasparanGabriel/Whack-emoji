@@ -12,34 +12,23 @@ body {
   background: url("../img/wallpaper.jpg") center center fixed no-repeat / cover;
 }
 
-.btn {
-  display: block;
-  position: relative;
-  margin: auto;
-
-  border: 0;
-  border-radius: 0.5rem;
+.audio {
   background-color: #00FF00;
-  box-shadow: 0 0.5rem #808080;
-  color: #808080;
-  text-shadow: -1px -1px #000000, 1px 1px #FFFFFF;
-  cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: center;
-  padding: 0.75rem 1.25rem;
+  box-shadow: 0 0.5rem #00CC00;
+  border-radius: 2rem;
+  padding: 0.25rem 0.5rem;
 }
 
-.btn:active {
-  box-shadow: none;
-  top: 0.5rem;
-}
-
-.btn:disabled {
+.audioDisabled {
   background-color: #FF0000;
   box-shadow: none;
   top: 0.5rem;
+}
+
+.btn {
+  border: 0;  
+  cursor: pointer;
+  position: relative;
 }
 
 .content {
@@ -59,7 +48,7 @@ body {
   display: none;
   color: #FFFFFF;
   font-family: 'DS DIGI';
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: center;
 }
 
@@ -77,6 +66,7 @@ body {
   list-style-type: none;
   height: 15rem;
   width: 15rem;
+  margin: auto;
   padding: 0;
 
   position: relative;
@@ -97,12 +87,30 @@ body {
 .score, .timerOn {
   color: #FFFFFF;
   font-family: 'DS DIGI';
-  font-size: 2rem;
+  font-size: 1.75rem;
   float: right;
 }
 
 .result, .timer {
   color: #FFFFFF;
   font-family: 'DS DIGI';
-  font-size: 2rem;
+  font-size: 1.75rem;
+}
+
+.start {
+  background-color: #00FF00;
+  box-shadow: 0 0.5rem #00CC00;
+  border-radius: 0.5rem;
+  color: #808080;
+  float: right;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.75rem;
+  text-shadow: -1px -1px #000000, 1px 1px #FFFFFF;
+  padding: 0.5rem 1rem;
+}
+
+.start:disabled {
+  background-color: #FF0000;
+  box-shadow: none;
+  top: 0.5rem;
 }

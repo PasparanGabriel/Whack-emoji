@@ -1,8 +1,10 @@
-let audioWin, audioGameOver, gameOver, score, timer, timerEmoji
+let audioClose, audioGameOver, audioWin, gameOver, score, timer, timerEmoji
 
 window.onload = function() {
-  audioWin = new Audio('audio/win.mp3')
+  audioClose = false
+
   audioGameOver = new Audio('audio/gameOver.mp3')
+  audioWin = new Audio('audio/win.mp3')
 }
 
 function start() {
@@ -14,17 +16,29 @@ function start() {
   timerEmoji = setInterval(faceJump, 1200)
   timer = setInterval(timerOn, 1000)
 
-  $('.gameOver').css('display', 'none')
+  $('.gameOver').removeAttr('style')
   $('.item').unbind('click').click(faceClick)
   $('.score').html(score)
   $('.start').attr('disabled', 'disabled')
-  $('.timerGame').css('display', 'block')
+  $('.timerGame').removeAttr('style')
   $('.timerOn').css('color', '#FFFFFF')
   $('.timerOn').html(
     (minutes < 10 ? '0' + minutes : minutes)
     + ':' +
     (seconds < 10 ? '0' + seconds : seconds)
   )
+}
+
+function audio() {
+  if (audioClose) {
+    audioClose = false
+    $('.audio').removeClass('audioDisabled')
+    $('#speaker').attr('src','img/speakerOn.png')
+  } else {
+    audioClose = true
+    $('.audio').addClass('audioDisabled')
+    $('#speaker').attr('src','img/speakerOff.png')
+  }
 }
 
 function faceJump() {
@@ -34,7 +48,10 @@ function faceJump() {
 
 function faceClick() {
   if ($(this).hasClass('emoji') && !gameOver) {
-    audioWin.play()
+    if (!audioClose) {
+      audioWin.play()
+    }
+    
     score++
     $('.score').html(score)
     $('.item').removeClass('emoji').removeAttr('style')
@@ -50,7 +67,9 @@ function randomNumber(number) {
 
 function timerOn() {
   if (gameOver) {
-    audioGameOver.play()
+    if (!audioClose) {
+      audioGameOver.play()
+    }
 
     clearInterval(timerEmoji)
     clearInterval(timer)
