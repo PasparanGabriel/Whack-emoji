@@ -1,8 +1,9 @@
-let audioClose, audioGameOver, audioWin, gameOver, score, timer, timerEmoji
+let audioClose, audioCountDown, audioGameOver, audioWin, gameOver, score, timer, timerEmoji
 
 window.onload = function() {
   audioClose = false
 
+  audioCountDown = new Audio('audio/countDown.mp3')
   audioGameOver = new Audio('audio/gameOver.mp3')
   audioWin = new Audio('audio/win.mp3')
 }
@@ -91,6 +92,7 @@ function timerOn() {
 
       if (minutes === 0 && seconds < 4) {
         $('.timerOn').css('color', '#FF0000')
+        audioCountDown.play()
       }
     }
   
