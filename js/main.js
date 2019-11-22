@@ -1,15 +1,17 @@
-let audioClose, audioCountDown, audioGameOver, audioWin, gameOver, score, timer, timerEmoji
+let audioClose, audioCountDown, audioGameOver, audioLife, audioWin, gameOver, life, score, timer, timerEmoji
 
 window.onload = function() {
   audioClose = false
 
   audioCountDown = new Audio('audio/countDown.mp3')
   audioGameOver = new Audio('audio/gameOver.mp3')
+  audioLife = new Audio('audio/life.mp3')
   audioWin = new Audio('audio/win.mp3')
 }
 
 function start() {
   gameOver = false
+  life = 3
   minutes = 2
   seconds = 0
   score = 0
@@ -19,6 +21,8 @@ function start() {
 
   $('.gameOver').removeAttr('style')
   $('.item').unbind('click').click(faceClick)
+  $('.life').html('&hearts;&hearts;&hearts;')
+  $('.life').removeAttr('style')
   $('.score').html(score)
   $('.start').attr('disabled', 'disabled')
   $('.timerGame').removeAttr('style')
@@ -57,7 +61,26 @@ function faceClick() {
     $('.score').html(score)
     $('.item').removeClass('emoji').removeAttr('style')
   }
-  else {
+  else if (life > 1) {
+    life--
+
+    if (!audioClose) {
+      audioLife.play()
+    }
+  
+    switch(life) {
+      case 2:
+        $('.life').html('&hearts;&hearts;')
+        break;
+      case 1:
+        $('.life').html('&hearts;')
+        break;
+      default:
+        console.log('Error')
+    }
+  } else {
+    life--
+    $('.life').css('visibility', 'hidden')
     gameOver = true
   }
 }

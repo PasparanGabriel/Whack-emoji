@@ -84,6 +84,14 @@ body {
   background-size: cover;
 }
 
+.life {
+  display: block;
+  color: #FF0000;
+  font-family: 'DS DIGI';
+  font-size: 1.75rem;
+  text-align: center;
+}
+
 .score, .timerOn {
   color: #FFFFFF;
   font-family: 'DS DIGI';
