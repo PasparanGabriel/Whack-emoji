@@ -3,10 +3,10 @@ let audioClose, audioCountDown, audioGameOver, audioLife, audioWin, gameOver, li
 window.onload = function() {
   audioClose = false
 
-  audioCountDown = new Audio('audio/countDown.mp3')
-  audioGameOver = new Audio('audio/gameOver.mp3')
-  audioLife = new Audio('audio/life.mp3')
-  audioWin = new Audio('audio/win.mp3')
+  audioCountDown = $("#audioCountDown")[0]
+  audioGameOver = $("#audioGameOver")[0]
+  audioLife = $("#audioLife")[0]
+  audioWin = $("#audioWin")[0]
 }
 
 function start() {
@@ -20,6 +20,7 @@ function start() {
   timer = setInterval(timerOn, 1000)
 
   $('.gameOver').removeAttr('style')
+  $('.item').removeClass('emoji')
   $('.item').unbind('click').click(faceClick)
   $('.life').html('&hearts;&hearts;&hearts;')
   $('.life').removeAttr('style')
@@ -115,7 +116,9 @@ function timerOn() {
 
       if (minutes === 0 && seconds < 4) {
         $('.timerOn').css('color', '#FF0000')
-        audioCountDown.play()
+        if (seconds === 3 && !audioClose) {
+          audioCountDown.play()
+        }
       }
     }
   
