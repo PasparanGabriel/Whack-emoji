@@ -10,24 +10,24 @@
   </head>
 
   <body>
-    <div class="content">
-      <div class="game">
-        <div class="gameOver">
+    <div id="content">
+      <div id="game">
+        <div id="gameOver">
           Game Over
         </div>
-        <div class="timerGame">
-          <span class="timer">Time</span>
-          <span class="timerOn">02:00</span>
+        <div id="timerGame">
+          <span id="timer">Time</span>
+          <span id="timerOn">02:00</span>
         </div>
         <div>
-          <span class="result">Score</span>
-          <span class="score">0</span>
+          <span id="result">Score</span>
+          <span id="score">0</span>
         </div>
         <div>
-          <span class="life">&hearts;&hearts;&hearts;</span>
+          <span id="life">&#10084;&#10084;&#10084;</span>
         </div>
   
-        <ul class="list">
+        <ul id="list">
           <li class="item"></li>
           <li class="item"></li>
           <li class="item"></li>
@@ -40,10 +40,10 @@
         </ul>
 
         <div>
-          <button class="btn audio" onclick="audio()">
+          <button class="btn" id="audio" onclick="audio()">
             <img src="img/speakerOn.png" alt="Speaker On" id="speaker" />
           </button>
-          <button class="btn start" onclick="start()">Start</button>
+          <button class="btn" id="start" onclick="start()">Start</button>
         </div>
 
         <audio id="audioCountDown">
@@ -63,7 +63,6 @@
 
 
     <!-- Links -->
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 
   </body>

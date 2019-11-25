@@ -12,16 +12,17 @@ body {
   background: url("../img/wallpaper.jpg") center center fixed no-repeat / cover;
 }
 
-.audio {
+#audio {
   background-color: #00FF00;
   box-shadow: 0 0.5rem #00CC00;
   border-radius: 2rem;
   padding: 0.25rem 0.5rem;
 }
 
-.audioDisabled {
+#audioDisabled {
   background-color: #FF0000;
-  box-shadow: none;
+  border-radius: 2rem;
+  padding: 0.25rem 0.5rem;
   top: 0.5rem;
 }
 
@@ -31,20 +32,20 @@ body {
   position: relative;
 }
 
-.content {
+#content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.game {
+#game {
   background-color: #000000;
   border-radius: 1.5rem;
   padding: 1rem;
 }
 
-.gameOver {
+#gameOver {
   display: none;
   color: #FFFFFF;
   font-family: 'DS DIGI';
@@ -60,7 +61,7 @@ body {
   margin: 0.5rem;
 }
 
-.list {
+#list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   list-style-type: none;
@@ -84,7 +85,7 @@ body {
   background-size: cover;
 }
 
-.life {
+#life {
   display: block;
   color: #FF0000;
   font-family: 'DS DIGI';
@@ -92,20 +93,20 @@ body {
   text-align: center;
 }
 
-.score, .timerOn {
+#score, #timerOn {
   color: #FFFFFF;
   font-family: 'DS DIGI';
   font-size: 1.75rem;
   float: right;
 }
 
-.result, .timer {
+#result, #timer {
   color: #FFFFFF;
   font-family: 'DS DIGI';
   font-size: 1.75rem;
 }
 
-.start {
+#start {
   background-color: #00FF00;
   box-shadow: 0 0.5rem #00CC00;
   border-radius: 0.5rem;
@@ -117,7 +118,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.start:disabled {
+#start:disabled {
   background-color: #FF0000;
   box-shadow: none;
   top: 0.5rem;
