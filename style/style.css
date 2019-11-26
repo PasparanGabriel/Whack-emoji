@@ -1,15 +1,21 @@
 @font-face {
   font-family: "DS DIGI";
-  src: url(../fonts/DS-DIGI.ttf);
+  src: url(../fonts/DS-DIGI.ttf),
+    url(../fonts/DS-DIGI.eot);
 }
 
 @font-face {
   font-family: "Press Start 2P";
-  src: url(../fonts/PressStart2P.ttf);
+  src: url(../fonts/PressStart2P.ttf),
+    url(../fonts/PressStart2P.eot);
 }
 
 body {
-  background: url("../img/wallpaper.jpg") center center fixed no-repeat / cover;
+  background-image: url(../img/wallpaper.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #audio {
@@ -33,10 +39,14 @@ body {
 }
 
 #content {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#controller {
+  padding-bottom: 0.5rem;
 }
 
 #game {
@@ -61,9 +71,58 @@ body {
   margin: 0.5rem;
 }
 
+#a {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+#b {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+
+#c {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+#d {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+#e {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+
+#f {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+
+#g {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+#h {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+}
+
+#i {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
 #list {
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   list-style-type: none;
   height: 15rem;
   width: 15rem;
